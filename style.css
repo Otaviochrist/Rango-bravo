@@ -1,0 +1,390 @@
+/* RESET E TIPOGRAFIA */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #333333;
+    line-height: 1.6;
+    background: #FDFCF6;
+}
+
+a {
+    text-decoration: none;
+    color: #333333;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
+    border-bottom: 1px solid #ECECEC;
+    background: #FDFCF6;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+header nav ul li a {
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #FF4D4D;
+}
+
+.btn-header {
+    background: #333333;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-header:hover {
+    background: #FF4D4D;
+}
+
+/* HERO SECTION */
+.hero {
+    height: 500px;
+    background: url("imagens/food-4k-1pf6px6ryqfjtnyr.jpg") center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.hero-text {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    padding: 0 1rem;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+.btn-hero {
+    background: #FF4D4D;
+    color: white;
+    padding: 0.8rem 2.2rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.btn-hero:hover {
+    background: #FF6666;
+    transform: translateY(-3px);
+}
+
+/* CARDS E SEÇÕES GERAIS */
+.receitas, .colecao {
+    padding: 4rem 3rem;
+    text-align: center;
+}
+
+.receitas h2, .colecao h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, max-content));
+    gap: 2rem;
+    justify-content: center; 
+    margin-top: 2rem;
+}
+
+/* ... resto do código ... */
+
+.card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 1.5rem;
+    text-align: left;
+}
+
+.card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    font-size: 0.95rem;
+    color: #555555;
+}
+
+/* TAGS DOS CARDS */
+.card-tags {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: white;
+    text-transform: uppercase;
+}
+
+.categoria {
+    background-color: #D4A373; /* Marrom claro/ocre */
+}
+
+.dificuldade {
+    background-color: #8E786C; /* Cinza-marrom mais escuro */
+}
+
+/* CLASSE PARA ESCONDER ELEMENTOS */
+.hidden {
+    display: none !important;
+}
+
+/* REVIEWS */
+.reviews {
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 0 1.5rem;
+}
+
+.reviews h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.review {
+    background: #F8F8F8;
+    border-left: 5px solid #FF4D4D;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.review-header img.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 1rem;
+    border: 2px solid #FF4D4D;
+}
+
+.review-header h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.review-header span {
+    font-size: 0.8rem;
+    color: #888888;
+}
+
+.stars {
+    color: #FFC107;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+/* PÁGINA DE RECEITAS */
+.receitas-pagina {
+    padding: 4rem 3rem;
+}
+
+.receitas-pagina h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+/* FILTROS */
+.filtros {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.filtro-item {
+  position: relative; 
+}
+
+.filtro-item button {
+  padding: 0.75rem 1.2rem;
+  border: 1px solid #DDDDDD;
+  background: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.filtro-item button:hover {
+  background: #F2F2F2;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.filtro-item i {
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.filtro-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #DDDDDD;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 0.5rem;
+  min-width: 150px;
+  z-index: 10;
+  
+  display: none;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.filtro-menu a {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: #333;
+  transition: background-color 0.2s ease;
+}
+
+.filtro-menu a:hover {
+  background-color: #f2f2f2;
+}
+
+.filtro-item.ativo .filtro-menu {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.filtro-item.ativo button {
+  background-color: #F2F2F2;
+}
+
+.filtro-item.ativo i {
+  transform: rotate(180deg);
+}
+
+/* FOOTER */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 3rem;
+    background: #FDFCF6;
+    border-top: 1px solid #ECECEC;
+    color: #333333;
+}
+
+.footer-links a {
+    margin-right: 1.5rem;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #FF4D4D;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer-socials img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.footer-socials img:hover {
+    transform: scale(1.15);
+}

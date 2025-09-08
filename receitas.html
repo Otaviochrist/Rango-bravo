@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rango Bravo - Receitas</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/5cc0cbf6fc.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Rango Bravo</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="receitas.html">Receitas</a></li>
+        <li><a href="chefs.html">Receitas dos chefs</a></li>
+        <li><a href="assinaturas.html">Assinaturas</a></li>
+        <li><a href="sobre.html">Sobre nós</a></li>
+      </ul>
+    </nav>
+    <button class="btn-header">Registrar-se</button>
+  </header>
+
+  <main class="receitas-pagina">
+    <h2>Explore as receitas</h2>
+
+    <div class="filtros">
+      <div class="filtro-item">
+        <button>Categoria <i class="fas fa-caret-down"></i></button>
+        <div class="filtro-menu">
+          <a href="#" data-filter="all">Todas</a>
+          <a href="#" data-filter="Prato Principal">Pratos Principais</a>
+          <a href="#" data-filter="Saudável">Saudável</a>
+          <a href="#" data-filter="Sopa">Sopas</a>
+          <a href="#" data-filter="Café da Manhã">Café da Manhã</a>
+          <a href="#" data-filter="Sobremesa">Sobremesas</a>
+          <a href="#" data-filter="Lanche">Lanches</a>
+        </div>
+      </div>
+
+      <div class="filtro-item">
+        <button>Dificuldade <i class="fas fa-caret-down"></i></button>
+        <div class="filtro-menu">
+          <a href="#" data-filter="all">Todas</a>
+          <a href="#" data-filter="Fácil">Fácil</a>
+          <a href="#" data-filter="Intermediário">Intermediário</a>
+          <a href="#" data-filter="Avançado">Avançado</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="cards">
+      <div class="card" data-category="Prato Principal" data-difficulty="Avançado">
+        <img src="imagens/feijoada.jpg" alt="Feijoada caseira">
+        <div class="card-content">
+          <h3>Feijoada caseira</h3>
+          <div class="card-tags">
+            <span class="tag categoria">Prato Principal</span>
+            <span class="tag dificuldade">Avançado</span>
+          </div>
+          <p>Uma feijoada deliciosa e fácil de fazer, ideal para um almoço em família. Acompanha couve refogada e farofa.</p>
+        </div>
+      </div>
+      <div class="card" data-category="Saudável" data-difficulty="Fácil">
+        <img src="imagens/marmita-frango.jpg" alt="Marmita de frango com salada">
+        <div class="card-content">
+          <h3>Marmita de frango com salada</h3>
+          <div class="card-tags">
+            <span class="tag categoria">Saudável</span>
+            <span class="tag dificuldade">Fácil</span>
+          </div>
+          <p>Opção saudável e prática para levar para o trabalho ou faculdade. Combina frango grelhado e uma salada fresca.</p>
+        </div>
+      </div>
+      <div class="card" data-category="Sopa" data-difficulty="Fácil">
+        <img src="imagens/sopa-legumes.jpg" alt="Sopa de legumes">
+        <div class="card-content">
+          <h3>Sopa de legumes</h3>
+          <div class="card-tags">
+            <span class="tag categoria">Sopa</span>
+            <span class="tag dificuldade">Fácil</span>
+          </div>
+          <p>Uma sopa cremosa e nutritiva, perfeita para dias frios. Feita com os vegetais da estação e um toque de azeite.</p>
+        </div>
+      </div>
+      <div class="card" data-category="Café da Manhã" data-difficulty="Fácil">
+        <img src="imagens/omelete.jpg" alt="Omelete de queijo com tomate">
+        <div class="card-content">
+          <h3>Omelete de queijo com tomate</h3>
+          <div class="card-tags">
+            <span class="tag categoria">Café da Manhã</span>
+            <span class="tag dificuldade">Fácil</span>
+          </div>
+          <p>Refeição rápida e cheia de proteína. A combinação de ovos, queijo derretido e tomate fresco é um clássico.</p>
+        </div>
+      </div>
+      <div class="card" data-category="Prato Principal" data-difficulty="Intermediário">
+        <img src="imagens/frango-batata.jpg" alt="Frango grelhado com batatas">
+        <div class="card-content">
+          <h3>Frango grelhado com batatas</h3>
+          <div class="card-tags">
+            <span class="tag categoria">Prato Principal</span>
+            <span class="tag dificuldade">Intermediário</span>
+          </div>
+          <p>Frango suculento temperado e batatas crocantes assadas. Um prato simples, mas cheio de sabor para o dia a dia.</p>
+        </div>
+      </div>
+      <div class="card" data-category="Sobremesa" data-difficulty="Fácil">
+        <img src="imagens/salada-fruta.jpg" alt="Salada de fruta refrescante">
+        <div class="card-content">
+          <h3>Salada de fruta refrescante</h3>
+          <div class="card-tags">
+            <span class="tag categoria">Sobremesa</span>
+            <span class="tag dificuldade">Fácil</span>
+          </div>
+          <p>Mistura de frutas frescas e coloridas, ideal para sobremesa ou lanche. Leve, saudável e muito refrescante.</p>
+        </div>
+      </div>
+      <div class="card" data-category="Lanche" data-difficulty="Fácil">
+        <img src="imagens/barra-cereais.jpg" alt="Barra proteica de cereais caseira">
+        <div class="card-content">
+          <h3>Barra proteica de cereais caseira</h3>
+          <div class="card-tags">
+            <span class="tag categoria">Lanche</span>
+            <span class="tag dificuldade">Fácil</span>
+          </div>
+          <p>Um lanche energético e prático para o pré-treino ou para quando a fome bater. Feita com aveia, mel e castanhas.</p>
+        </div>
+      </div>
+      <div class="card" data-category="Sobremesa" data-difficulty="Intermediário">
+        <img src="imagens/mousse-abacate.jpg" alt="Mousse de abacate com chocolate">
+        <div class="card-content">
+          <h3>Mousse de abacate com gotas de chocolate</h3>
+          <div class="card-tags">
+            <span class="tag categoria">Sobremesa</span>
+            <span class="tag dificuldade">Intermediário</span>
+          </div>
+          <p>Sobremesa surpreendente e saudável, sem lactose. O abacate dá a cremosidade, e o chocolate as gotas de sabor.</p>
+        </div>
+      </div>
+      <div class="card" data-category="Café da Manhã" data-difficulty="Fácil">
+        <img src="imagens/iogurte.jpg" alt="Iogurte com frutas vermelhas">
+        <div class="card-content">
+          <h3>Iogurte com aveia e frutas vermelhas</h3>
+          <div class="card-tags">
+            <span class="tag categoria">Café da Manhã</span>
+            <span class="tag dificuldade">Fácil</span>
+          </div>
+          <p>Uma opção deliciosa para o café da manhã ou lanche da tarde. O iogurte cremoso combina com a acidez das frutas.</p>
+        </div>
+      </div>
+      <div class="card" data-category="Lanche" data-difficulty="Intermediário">
+        <img src="imagens/cookies.jpg" alt="Cookies de aveia com gotas de chocolate">
+        <div class="card-content">
+          <h3>Cookies de aveia com gotas de chocolate</h3>
+          <div class="card-tags">
+            <span class="tag categoria">Lanche</span>
+            <span class="tag dificuldade">Intermediário</span>
+          </div>
+          <p>Cookies fofos e saudáveis, perfeitos para um lanche rápido. A aveia e o chocolate criam a dupla perfeita.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="sobre.html">Sobre nós</a>
+      <a href="contato.html">Contato</a>
+      <a href="politica.html">Política de segurança</a>
+    </div>
+
+    <div class="footer-socials">
+      <a href="#"><img src="imagens/x.png" alt="Twitter"></a>
+      <a href="#"><img src="imagens/instagram.png" alt="Instagram"></a>
+      <a href="#"><img src="imagens/facebook.png" alt="Facebook"></a>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const filterItems = document.querySelectorAll('.filtro-item');
+        const filterLinks = document.querySelectorAll('.filtro-menu a');
+        const recipeCards = document.querySelectorAll('.cards .card');
+
+        // Lógica para abrir e fechar os menus de filtro
+        filterItems.forEach(item => {
+            const button = item.querySelector('button');
+            
+            button.addEventListener('click', () => {
+                filterItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('ativo');
+                    }
+                });
+                item.classList.toggle('ativo');
+            });
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!event.target.closest('.filtro-item')) {
+                filterItems.forEach(item => {
+                    item.classList.remove('ativo');
+                });
+            }
+        });
+
+        // Lógica principal de filtragem
+        filterLinks.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault(); // Evita que a página recarregue
+                
+                const filterValue = event.target.dataset.filter;
+                const filterType = event.target.closest('.filtro-item').querySelector('button').textContent.trim().toLowerCase();
+                
+                recipeCards.forEach(card => {
+                    const cardCategory = card.dataset.category;
+                    const cardDifficulty = card.dataset.difficulty;
+                    
+                    if (filterValue === 'all') {
+                        card.classList.remove('hidden'); // Mostra todos os cards
+                    } else if (filterType.includes('categoria')) {
+                        if (cardCategory === filterValue) {
+                            card.classList.remove('hidden');
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    } else if (filterType.includes('dificuldade')) {
+                        if (cardDifficulty === filterValue) {
+                            card.classList.remove('hidden');
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    }
+                });
+
+                // Fecha o menu após a seleção
+                filterItems.forEach(item => item.classList.remove('ativo'));
+            });
+        });
+    });
+  </script>
+
+</body>
+</html>

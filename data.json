@@ -1,0 +1,42 @@
+{
+  "hero": {
+    "title": "A arte de cozinhar em casa",
+    "subtitle": "Seu marmitex, sua economia. Comida de verdade para o dia a dia de estudos.",
+    "image": "imagens/marmitasfit-imgdestacada.jpg"
+  },
+  "receitas": [
+    {
+      "titulo": "Omelete de queijo com tomate",
+      "descricao": "Uma refeição rápida e nutritiva, ideal para qualquer hora do dia. Basta bater os ovos, adicionar queijo e tomate picado, e cozinhar na frigideira até ficar macio.",
+      "imagem": "LINK_OMELETE"
+    },
+    {
+      "titulo": "Frango grelhado com batata",
+      "descricao": "Uma refeição completa e versátil. Prepare o frango grelhado com temperos a gosto, acompanhado de batatas crocantes assadas. Saudável e saboroso.",
+      "imagem": "LINK_FRANGO_BATATA"
+    },
+    {
+      "titulo": "Strogonoff de Frango",
+      "descricao": "Um prato delicioso e reconfortante, feito com tiras de frango, molho de tomate, cogumelos e um toque de creme de leite. Fácil de preparar, rápido e delicioso.",
+      "imagem": "LINK_STROGONOFF"
+    }
+  ],
+  "reviews": [
+    {
+      "nome": "Livia L.",
+      "tempo": "2 meses atrás",
+      "avaliacao": 5,
+      "texto": "Esse site mudou completamente minha alimentação e deixou ela mais saudável de maneira mais leve, isso mudou muito minha vida agora posso andar nas ruas com mais confiança."
+    },
+    {
+      "nome": "Otávio C.",
+      "tempo": "1 semana atrás",
+      "avaliacao": 5,
+      "texto": "Sabe, vi uns anúncios sobre esse 'Rango Bravo' e achei a proposta bem legal. Pelo que entendi, não é só sobre seguir uma receita, é sobre fazer algo que parece chique, mas de um jeito mais acessível."
+    }
+  ],
+  "colecao": {
+    "titulo": "Coleção do Chefe",
+    "descricao": "Receitas exclusivas selecionadas a dedo pelos nossos chefs parceiros. Uma experiência gastronômica única na palma da sua mão."
+  }
+}
