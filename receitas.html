@@ -165,6 +165,58 @@
     </div>
   </main>
 
+  <!-- MODAL -->
+  <div id="recipeModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <img id="modalImage" src="" alt="">
+        <button class="close-modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <h2 id="modalTitle" class="modal-title"></h2>
+        <div id="modalTags" class="modal-tags"></div>
+        <p id="modalDescription" class="modal-description"></p>
+        
+        <div class="receita-info">
+          <div class="info-item">
+            <i class="fas fa-clock"></i>
+            <h4>Tempo de Preparo</h4>
+            <span id="modalTime">30 min</span>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-users"></i>
+            <h4>Porções</h4>
+            <span id="modalServings">4 pessoas</span>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-chart-bar"></i>
+            <h4>Dificuldade</h4>
+            <span id="modalDifficulty">Fácil</span>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-fire"></i>
+            <h4>Calorias</h4>
+            <span id="modalCalories">250 kcal</span>
+          </div>
+        </div>
+
+        <div class="ingredientes">
+          <h3><i class="fas fa-list"></i> Ingredientes</h3>
+          <ul id="modalIngredients">
+            <!-- Ingredientes serão inseridos aqui -->
+          </ul>
+        </div>
+
+        <div class="modo-preparo">
+          <h3><i class="fas fa-utensils"></i> Modo de Preparo</h3>
+          <ol id="modalInstructions">
+            <!-- Instruções serão inseridas aqui -->
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <footer>
     <div class="footer-links">
       <a href="sobre.html">Sobre nós</a>
@@ -180,10 +232,137 @@
   </footer>
 
   <script>
+    // Dados das receitas (normalmente viriam de uma API ou banco de dados)
+    const receitasData = {
+      "Feijoada caseira": {
+        time: "3h 30min",
+        servings: "8 pessoas",
+        calories: "450 kcal",
+        ingredients: [
+          "500g de feijão preto",
+          "300g de linguiça calabresa",
+          "200g de bacon em cubos",
+          "300g de costela de porco",
+          "200g de carne seca dessalgada",
+          "1 cebola grande picada",
+          "4 dentes de alho picados",
+          "2 folhas de louro",
+          "Sal e pimenta a gosto"
+        ],
+        instructions: [
+          "Deixe o feijão de molho na água por pelo menos 8 horas.",
+          "Cozinhe o feijão em panela de pressão por 40 minutos.",
+          "Em uma panela grande, refogue a cebola e o alho até dourar.",
+          "Adicione as carnes e refogue por 10 minutos.",
+          "Acrescente o feijão cozido com o caldo e as folhas de louro.",
+          "Deixe cozinhar em fogo baixo por 1 hora, mexendo ocasionalmente.",
+          "Tempere com sal e pimenta a gosto.",
+          "Sirva acompanhado de arroz branco, couve refogada e farofa."
+        ]
+      },
+      "Marmita de frango com salada": {
+        time: "25 min",
+        servings: "2 pessoas",
+        calories: "320 kcal",
+        ingredients: [
+          "2 filés de frango",
+          "1 xícara de arroz integral",
+          "Alface americana",
+          "Tomate cereja",
+          "Cenoura ralada",
+          "Azeite extra virgem",
+          "Limão",
+          "Sal, pimenta e orégano"
+        ],
+        instructions: [
+          "Tempere o frango com sal, pimenta e orégano.",
+          "Grelhe o frango em frigideira antiaderente até dourar.",
+          "Cozinhe o arroz integral conforme instruções da embalagem.",
+          "Lave e corte a alface em pedaços médios.",
+          "Corte os tomates cereja pela metade.",
+          "Monte a salada com alface, tomate e cenoura.",
+          "Tempere a salada com azeite, limão e sal.",
+          "Organize tudo na marmita: arroz, frango e salada."
+        ]
+      },
+      "Sopa de legumes": {
+        time: "40 min",
+        servings: "4 pessoas",
+        calories: "180 kcal",
+        ingredients: [
+          "2 cenouras em cubos",
+          "2 batatas em cubos",
+          "1 abobrinha em cubos",
+          "1 chuchu em cubos",
+          "1 cebola picada",
+          "2 dentes de alho",
+          "1 litro de caldo de legumes",
+          "Salsinha e cebolinha",
+          "Azeite, sal e pimenta"
+        ],
+        instructions: [
+          "Refogue a cebola e o alho no azeite até dourar.",
+          "Adicione todos os legumes e refogue por 5 minutos.",
+          "Acrescente o caldo de legumes quente.",
+          "Deixe cozinhar por 25 minutos ou até os legumes ficarem macios.",
+          "Tempere com sal e pimenta a gosto.",
+          "Finalize com salsinha e cebolinha picadas.",
+          "Sirva bem quente."
+        ]
+      },
+      "Omelete de queijo com tomate": {
+        time: "15 min",
+        servings: "1 pessoa",
+        calories: "280 kcal",
+        ingredients: [
+          "3 ovos",
+          "50g de queijo mussarela ralado",
+          "1 tomate pequeno em fatias",
+          "1 colher de sopa de leite",
+          "Sal, pimenta e orégano",
+          "1 colher de chá de manteiga"
+        ],
+        instructions: [
+          "Bata os ovos com o leite, sal e pimenta.",
+          "Aqueça a manteiga em frigideira antiaderente.",
+          "Despeje os ovos batidos na frigideira.",
+          "Quando começar a firmar, adicione o queijo e o tomate.",
+          "Dobre o omelete ao meio com uma espátula.",
+          "Deixe por mais 1 minuto para o queijo derreter.",
+          "Sirva imediatamente polvilhado com orégano."
+        ]
+      },
+      "Frango grelhado com batatas": {
+        time: "45 min",
+        servings: "3 pessoas",
+        calories: "380 kcal",
+        ingredients: [
+          "3 filés de frango",
+          "500g de batatas pequenas",
+          "Alecrim fresco",
+          "Alho em lâminas",
+          "Azeite extra virgem",
+          "Sal, pimenta e páprica",
+          "Limão"
+        ],
+        instructions: [
+          "Tempere o frango com sal, pimenta e páprica.",
+          "Corte as batatas ao meio e tempere com sal e alecrim.",
+          "Asse as batatas no forno a 200°C por 30 minutos.",
+          "Grelhe o frango em frigideira com um fio de azeite.",
+          "Adicione alho em lâminas na frigideira com o frango.",
+          "Vire o frango e cozinhe até dourar dos dois lados.",
+          "Finalize com suco de limão e sirva com as batatas."
+        ]
+      }
+    };
+
     document.addEventListener('DOMContentLoaded', () => {
         const filterItems = document.querySelectorAll('.filtro-item');
         const filterLinks = document.querySelectorAll('.filtro-menu a');
         const recipeCards = document.querySelectorAll('.cards .card');
+        const modal = document.getElementById('recipeModal');
+        const closeBtn = document.querySelector('.close-modal');
 
         // Lógica para abrir e fechar os menus de filtro
         filterItems.forEach(item => {
@@ -210,7 +389,7 @@
         // Lógica principal de filtragem
         filterLinks.forEach(link => {
             link.addEventListener('click', (event) => {
-                event.preventDefault(); // Evita que a página recarregue
+                event.preventDefault();
                 
                 const filterValue = event.target.dataset.filter;
                 const filterType = event.target.closest('.filtro-item').querySelector('button').textContent.trim().toLowerCase();
@@ -220,7 +399,7 @@
                     const cardDifficulty = card.dataset.difficulty;
                     
                     if (filterValue === 'all') {
-                        card.classList.remove('hidden'); // Mostra todos os cards
+                        card.classList.remove('hidden');
                     } else if (filterType.includes('categoria')) {
                         if (cardCategory === filterValue) {
                             card.classList.remove('hidden');
@@ -236,9 +415,84 @@
                     }
                 });
 
-                // Fecha o menu após a seleção
                 filterItems.forEach(item => item.classList.remove('ativo'));
             });
+        });
+
+        // Lógica do modal
+        recipeCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const title = card.querySelector('h3').textContent;
+                const img = card.querySelector('img');
+                const description = card.querySelector('p').textContent;
+                const tags = card.querySelectorAll('.tag');
+                
+                // Preencher dados do modal
+                document.getElementById('modalTitle').textContent = title;
+                document.getElementById('modalImage').src = img.src;
+                document.getElementById('modalImage').alt = img.alt;
+                document.getElementById('modalDescription').textContent = description;
+                
+                // Limpar e adicionar tags
+                const modalTags = document.getElementById('modalTags');
+                modalTags.innerHTML = '';
+                tags.forEach(tag => {
+                    const newTag = tag.cloneNode(true);
+                    modalTags.appendChild(newTag);
+                });
+                
+                // Buscar dados específicos da receita
+                const recipeData = receitasData[title];
+                if (recipeData) {
+                    document.getElementById('modalTime').textContent = recipeData.time;
+                    document.getElementById('modalServings').textContent = recipeData.servings;
+                    document.getElementById('modalCalories').textContent = recipeData.calories;
+                    document.getElementById('modalDifficulty').textContent = card.dataset.difficulty;
+                    
+                    // Preencher ingredientes
+                    const ingredientsList = document.getElementById('modalIngredients');
+                    ingredientsList.innerHTML = '';
+                    recipeData.ingredients.forEach(ingredient => {
+                        const li = document.createElement('li');
+                        li.textContent = ingredient;
+                        ingredientsList.appendChild(li);
+                    });
+                    
+                    // Preencher instruções
+                    const instructionsList = document.getElementById('modalInstructions');
+                    instructionsList.innerHTML = '';
+                    recipeData.instructions.forEach(instruction => {
+                        const li = document.createElement('li');
+                        li.textContent = instruction;
+                        instructionsList.appendChild(li);
+                    });
+                }
+                
+                // Mostrar modal
+                modal.classList.add('show');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        // Fechar modal
+        function closeModal() {
+            modal.classList.remove('show');
+            document.body.style.overflow = 'auto';
+        }
+
+        closeBtn.addEventListener('click', closeModal);
+        
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Fechar modal com ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('show')) {
+                closeModal();
+            }
         });
     });
   </script>

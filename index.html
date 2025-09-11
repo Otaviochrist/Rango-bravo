@@ -32,21 +32,21 @@
   <section class="receitas">
     <h2>Receitas em destaque</h2>
     <div class="cards">
-      <div class="card">
+      <div class="card" data-category="Café da Manhã" data-difficulty="Fácil">
         <img src="imagens/omelete.jpg" alt="Omelete de queijo com tomate">
         <div class="card-content">
           <h3>Omelete de queijo com tomate</h3>
           <p>Uma refeição rápida e nutritiva, ideal para qualquer hora do dia. Basta bater os ovos, adicionar queijo e tomate picado, e cozinhar na frigideira até ficar macio.</p>
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-category="Prato Principal" data-difficulty="Intermediário">
         <img src="imagens/frango-batata.jpg" alt="Frango grelhado com batata">
         <div class="card-content">
           <h3>Frango grelhado com batata</h3>
           <p>Uma refeição completa e versátil. Prepare o frango grelhado com temperos a gosto, acompanhado de batatas crocantes assadas. Saudável e saboroso.</p>
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-category="Prato Principal" data-difficulty="Intermediário">
         <img src="imagens/Strogonoff de frango.jpg" alt="Strogonoff de Frango">
         <div class="card-content">
           <h3>Strogonoff de Frango</h3>
@@ -89,6 +89,55 @@
     <a href="colecao.html" class="btn-colecao">Descubra a coleção</a>
   </section>
 
+  <div id="recipeModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <img id="modalImage" src="" alt="">
+        <button class="close-modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <h2 id="modalTitle" class="modal-title"></h2>
+        <div id="modalTags" class="modal-tags"></div>
+        <p id="modalDescription" class="modal-description"></p>
+        
+        <div class="receita-info">
+          <div class="info-item">
+            <i class="fas fa-clock"></i>
+            <h4>Tempo de Preparo</h4>
+            <span id="modalTime">30 min</span>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-users"></i>
+            <h4>Porções</h4>
+            <span id="modalServings">4 pessoas</span>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-chart-bar"></i>
+            <h4>Dificuldade</h4>
+            <span id="modalDifficulty">Fácil</span>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-fire"></i>
+            <h4>Calorias</h4>
+            <span id="modalCalories">250 kcal</span>
+          </div>
+        </div>
+
+        <div class="ingredientes">
+          <h3><i class="fas fa-list"></i> Ingredientes</h3>
+          <ul id="modalIngredients">
+            </ul>
+        </div>
+
+        <div class="modo-preparo">
+          <h3><i class="fas fa-utensils"></i> Modo de Preparo</h3>
+          <ol id="modalInstructions">
+            </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <footer>
     <div class="footer-links">
       <a href="sobre.html">Sobre nós</a>
@@ -102,6 +151,183 @@
       <a href="#"><img src="imagens/facebook.png" alt="Facebook"></a>
     </div>
   </footer>
+
+  <script>
+    // Dados das receitas específicas do index
+    const receitasData = {
+      "Omelete de queijo com tomate": {
+        time: "15 min",
+        servings: "1 pessoa",
+        calories: "280 kcal",
+        difficulty: "Fácil",
+        category: "Café da Manhã",
+        ingredients: [
+          "3 ovos",
+          "50g de queijo mussarela ralado",
+          "1 tomate pequeno em fatias",
+          "1 colher de sopa de leite",
+          "Sal, pimenta e orégano a gosto",
+          "1 colher de chá de manteiga"
+        ],
+        instructions: [
+          "Bata os ovos com o leite, sal e pimenta em uma tigela.",
+          "Aqueça a manteiga em frigideira antiaderente em fogo médio.",
+          "Despeje os ovos batidos na frigideira e deixe cozinhar por 2 minutos.",
+          "Quando começar a firmar, adicione o queijo e as fatias de tomate de um lado.",
+          "Dobre o omelete ao meio com uma espátula cuidadosamente.",
+          "Deixe por mais 1 minuto para o queijo derreter completamente.",
+          "Transfira para o prato e polvilhe orégano por cima.",
+          "Sirva imediatamente enquanto ainda está quente."
+        ]
+      },
+      "Frango grelhado com batata": {
+        time: "45 min",
+        servings: "3 pessoas",
+        calories: "380 kcal",
+        difficulty: "Intermediário",
+        category: "Prato Principal",
+        ingredients: [
+          "3 filés de frango",
+          "500g de batatas pequenas",
+          "2 ramos de alecrim fresco",
+          "3 dentes de alho em lâminas",
+          "4 colheres de sopa de azeite extra virgem",
+          "Sal, pimenta-do-reino e páprica doce",
+          "1 limão (suco)",
+          "Sal grosso para as batatas"
+        ],
+        instructions: [
+          "Pré-aqueça o forno a 200°C.",
+          "Tempere o frango com sal, pimenta e páprica de ambos os lados.",
+          "Corte as batatas ao meio e tempere com sal grosso, azeite e alecrim.",
+          "Coloque as batatas em uma assadeira e leve ao forno por 30 minutos.",
+          "Aqueça uma frigideira com um fio de azeite em fogo médio-alto.",
+          "Grelhe o frango por 6-7 minutos de cada lado até dourar bem.",
+          "Adicione as lâminas de alho na frigideira nos últimos 2 minutos.",
+          "Finalize o frango com suco de limão e sirva com as batatas assadas."
+        ]
+      },
+      "Strogonoff de Frango": {
+        time: "30 min",
+        servings: "4 pessoas",
+        calories: "420 kcal",
+        difficulty: "Intermediário",
+        category: "Prato Principal",
+        ingredients: [
+          "600g de peito de frango em tiras",
+          "200g de champignon fatiado",
+          "1 cebola média picada",
+          "3 dentes de alho picados",
+          "200ml de creme de leite",
+          "2 colheres de sopa de molho de tomate",
+          "1 colher de sopa de mostarda",
+          "2 colheres de sopa de ketchup",
+          "Sal, pimenta e salsa picada",
+          "2 colheres de sopa de óleo"
+        ],
+        instructions: [
+          "Tempere as tiras de frango com sal e pimenta.",
+          "Aqueça o óleo em uma panela grande e refogue o frango até dourar.",
+          "Retire o frango e reserve.",
+          "Na mesma panela, refogue a cebola e o alho até dourar.",
+          "Adicione os champignons e cozinhe por 3 minutos.",
+          "Acrescente o molho de tomate, mostarda e ketchup, misture bem.",
+          "Retorne o frango à panela e adicione o creme de leite.",
+          "Cozinhe por 5 minutos, mexendo delicadamente.",
+          "Ajuste o sal e finalize com salsa picada.",
+          "Sirva acompanhado de arroz branco e batata palha."
+        ]
+      }
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const recipeCards = document.querySelectorAll('.receitas .card');
+        const modal = document.getElementById('recipeModal');
+        const closeBtn = document.querySelector('.close-modal');
+
+        // Lógica do modal
+        recipeCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const title = card.querySelector('h3').textContent;
+                const img = card.querySelector('img');
+                const description = card.querySelector('p').textContent;
+                
+                // Preencher dados básicos do modal
+                document.getElementById('modalTitle').textContent = title;
+                document.getElementById('modalImage').src = img.src;
+                document.getElementById('modalImage').alt = img.alt;
+                document.getElementById('modalDescription').textContent = description;
+                
+                // Buscar dados específicos da receita
+                const recipeData = receitasData[title];
+                if (recipeData) {
+                    // Criar e adicionar tags
+                    const modalTags = document.getElementById('modalTags');
+                    modalTags.innerHTML = '';
+                    
+                    const categoryTag = document.createElement('span');
+                    categoryTag.className = 'tag categoria';
+                    categoryTag.textContent = recipeData.category;
+                    modalTags.appendChild(categoryTag);
+                    
+                    const difficultyTag = document.createElement('span');
+                    difficultyTag.className = 'tag dificuldade';
+                    difficultyTag.textContent = recipeData.difficulty;
+                    modalTags.appendChild(difficultyTag);
+                    
+                    // Preencher informações da receita
+                    document.getElementById('modalTime').textContent = recipeData.time;
+                    document.getElementById('modalServings').textContent = recipeData.servings;
+                    document.getElementById('modalCalories').textContent = recipeData.calories;
+                    document.getElementById('modalDifficulty').textContent = recipeData.difficulty;
+                    
+                    // Preencher ingredientes
+                    const ingredientsList = document.getElementById('modalIngredients');
+                    ingredientsList.innerHTML = '';
+                    recipeData.ingredients.forEach(ingredient => {
+                        const li = document.createElement('li');
+                        li.textContent = ingredient;
+                        ingredientsList.appendChild(li);
+                    });
+                    
+                    // Preencher instruções
+                    const instructionsList = document.getElementById('modalInstructions');
+                    instructionsList.innerHTML = '';
+                    recipeData.instructions.forEach(instruction => {
+                        const li = document.createElement('li');
+                        li.textContent = instruction;
+                        instructionsList.appendChild(li);
+                    });
+                }
+                
+                // Mostrar modal
+                modal.classList.add('show');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        // Fechar modal
+        function closeModal() {
+            modal.classList.remove('show');
+            document.body.style.overflow = 'auto';
+        }
+
+        closeBtn.addEventListener('click', closeModal);
+        
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Fechar modal com ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('show')) {
+                closeModal();
+            }
+        });
+    });
+  </script>
 
 </body>
 </html>
