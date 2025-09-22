@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rango Bravo - Registrar</title>
+  
+  <link rel="stylesheet" href="style.css">
+  
+  <script src="https://kit.fontawesome.com/5cc0cbf6fc.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Rango Bravo</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="receitas.html">Receitas</a></li>
+        <li><a href="chefs.html">Receitas dos chefs</a></li>
+        <li><a href="assinaturas.html">Assinaturas</a></li>
+        <li><a href="sobre.html">Sobre nós</a></li>
+      </ul>
+    </nav>
+    <a href="login.html" class="btn-header" role="button">Entrar</a>
+  </header>
+
+  <main class="registro-container">
+    <div class="registro-wrapper">
+      <div class="registro-info">
+        <h2>Junte-se ao Rango Bravo!</h2>
+        <p>Descubra o prazer de cozinhar em casa com nossas receitas exclusivas, dicas de chefs e uma comunidade apaixonada por boa comida.</p>
+        
+        <ul class="beneficios">
+          <li><i class="fas fa-utensils"></i> Acesso a centenas de receitas</li>
+          <li><i class="fas fa-user-friends"></i> Receitas exclusivas dos chefs</li>
+          <li><i class="fas fa-users"></i> Comunidade ativa de cozinheiros</li>
+          <li><i class="fas fa-mobile-alt"></i> Acesso em todos os dispositivos</li>
+          <li><i class="fas fa-star"></i> Conteúdo personalizado para você</li>
+        </ul>
+      </div>
+
+      <div class="registro-form">
+        <div class="form-header">
+          <h1>Criar Conta</h1>
+          <p>Preencha os dados para começar sua jornada culinária</p>
+        </div>
+
+        <form id="registroForm" novalidate>
+          <div class="form-group">
+            <label for="nome">Nome Completo</label>
+            <input type="text" id="nome" name="nome" class="form-control" placeholder="Digite seu nome completo">
+            <div class="error-message">Por favor, digite seu nome completo</div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" class="form-control" placeholder="seu.email@exemplo.com">
+            <div class="error-message">Por favor, digite um e-mail válido</div>
+          </div>
+
+          <div class="form-group">
+            <label for="senha">Senha</label>
+            <div class="password-wrapper">
+              <input type="password" id="senha" name="senha" class="form-control" placeholder="Crie uma senha segura">
+              <button type="button" class="toggle-password" data-target="senha">
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
+            <small class="form-text">A senha deve ter no mínimo 6 caracteres, com uma letra maiúscula e uma minúscula.</small>
+            <div class="error-message">A senha deve ter pelo menos 6 caracteres</div>
+          </div>
+
+          <div class="form-group">
+            <label for="confirmarSenha">Confirmar Senha</label>
+            <div class="password-wrapper">
+              <input type="password" id="confirmarSenha" name="confirmarSenha" class="form-control" placeholder="Confirme sua senha">
+              <button type="button" class="toggle-password" data-target="confirmarSenha">
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
+            <div class="error-message">As senhas não coincidem</div>
+          </div>
+
+          <div class="checkbox-group">
+            <div class="checkbox-custom" data-checkbox="termos"></div>
+            <label class="checkbox-label" for="termos">
+              Eu concordo com os <a href="#" target="_blank">Termos de Uso</a> e <a href="#" target="_blank">Política de Privacidade</a>
+            </label>
+          </div>
+
+          <div class="checkbox-group">
+            <div class="checkbox-custom" data-checkbox="newsletter"></div>
+            <label class="checkbox-label" for="newsletter">
+              Quero receber receitas exclusivas e dicas culinárias por e-mail
+            </label>
+          </div>
+
+          <button type="submit" class="btn-registro" disabled>
+            Criar Minha Conta
+          </button>
+        </form>
+
+        <div class="divider">
+          <span>ou cadastre-se com</span>
+        </div>
+
+        <div class="social-login">
+          <button class="btn-social btn-google">
+            <i class="fab fa-google"></i>
+            Google
+          </button>
+          <button class="btn-social btn-facebook">
+            <i class="fab fa-facebook-f"></i>
+            Facebook
+          </button>
+        </div>
+
+        <div class="login-link">
+          Já tem uma conta? <a href="login.html">Faça login</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="sobre.html">Sobre nós</a>
+      <a href="contato.html">Contato</a>
+      <a href="politica.html">Política de segurança</a>
+    </div>
+
+    <div class="footer-socials">
+      <a href="#"><img src="imagens/x.png" alt="Twitter"></a>
+      <a href="#"><img src="imagens/instagram.png" alt="Instagram"></a>
+      <a href="#"><img src="imagens/facebook.png" alt="Facebook"></a>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('registroForm');
+      const campos = {
+        nome: document.getElementById('nome'),
+        email: document.getElementById('email'),
+        senha: document.getElementById('senha'),
+        confirmarSenha: document.getElementById('confirmarSenha')
+      };
+      const btnSubmit = document.querySelector('.btn-registro');
+      const checkboxes = document.querySelectorAll('.checkbox-custom');
+      const togglePasswordBtns = document.querySelectorAll('.toggle-password');
+
+      let checkboxStates = {
+        termos: false,
+        newsletter: false
+      };
+
+      checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('click', function() {
+          const checkboxName = this.getAttribute('data-checkbox');
+          checkboxStates[checkboxName] = !checkboxStates[checkboxName];
+          
+          if (checkboxStates[checkboxName]) {
+            this.classList.add('checked');
+          } else {
+            this.classList.remove('checked');
+          }
+          
+          validarFormulario();
+        });
+      });
+
+      togglePasswordBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const target = this.getAttribute('data-target');
+          const input = document.getElementById(target);
+          const icon = this.querySelector('i');
+          
+          if (input.type === 'password') {
+            input.type = 'text';
+            icon.classList.remove('fa-eye');
+            icon.classList.add('fa-eye-slash');
+          } else {
+            input.type = 'password';
+            icon.classList.remove('fa-eye-slash');
+            icon.classList.add('fa-eye');
+          }
+        });
+      });
+
+      Object.keys(campos).forEach(nomeCampo => {
+        const campo = campos[nomeCampo];
+        
+        campo.addEventListener('input', function() {
+          validarCampo(nomeCampo);
+          validarFormulario();
+        });
+
+        campo.addEventListener('blur', function() {
+          validarCampo(nomeCampo);
+        });
+      });
+
+      function validarCampo(nomeCampo) {
+        const campo = campos[nomeCampo];
+        const valor = campo.value.trim();
+        const formGroup = campo.closest('.form-group');
+        const errorElement = formGroup.querySelector('.error-message');
+        
+        let isValid = true;
+        let errorMsg = '';
+
+        switch (nomeCampo) {
+          case 'nome':
+            if (valor.length < 2) {
+              isValid = false;
+              errorMsg = 'Nome deve ter pelo menos 2 caracteres';
+            } else if (!/^[a-zA-ZÀ-ÿ\s]+$/.test(valor)) {
+              isValid = false;
+              errorMsg = 'Nome deve conter apenas letras';
+            }
+            break;
+
+          case 'email':
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(valor)) {
+              isValid = false;
+              errorMsg = 'Por favor, digite um e-mail válido';
+            }
+            break;
+
+          case 'senha':
+            if (valor.length < 6) {
+              isValid = false;
+              errorMsg = 'A senha deve ter pelo menos 6 caracteres';
+            } else if (!/(?=.*[a-z])(?=.*[A-Z])/.test(valor)) {
+              isValid = false;
+              errorMsg = 'A senha deve conter ao menos uma letra maiúscula e minúscula';
+            }
+            
+            if (campos.confirmarSenha.value.trim() !== '') {
+              validarCampo('confirmarSenha');
+            }
+            break;
+
+          case 'confirmarSenha':
+            if (valor !== campos.senha.value.trim()) {
+              isValid = false;
+              errorMsg = 'As senhas não coincidem';
+            }
+            break;
+        }
+
+        if (valor === '') {
+          campo.classList.remove('error', 'success');
+          errorElement.style.display = 'none';
+        } else if (isValid) {
+          campo.classList.remove('error');
+          campo.classList.add('success');
+          errorElement.style.display = 'none';
+        } else {
+          campo.classList.remove('success');
+          campo.classList.add('error');
+          errorElement.textContent = errorMsg;
+          errorElement.style.display = 'block';
+        }
+
+        return isValid;
+      }
+
+      function validarFormulario() {
+        const todosValidos = Object.keys(campos).every(nome => {
+          const campo = campos[nome];
+          return campo.value.trim() !== '' && !campo.classList.contains('error');
+        });
+
+        const termosAceitos = checkboxStates.termos;
+        
+        if (todosValidos && termosAceitos) {
+          btnSubmit.disabled = false;
+          btnSubmit.textContent = 'Criar Minha Conta';
+        } else {
+          btnSubmit.disabled = true;
+          btnSubmit.textContent = 'Preencha todos os campos';
+        }
+      }
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        let formValido = true;
+        Object.keys(campos).forEach(nome => {
+          if (!validarCampo(nome)) {
+            formValido = false;
+          }
+        });
+
+        if (!checkboxStates.termos) {
+          alert('Por favor, aceite os termos de uso para continuar.');
+          return;
+        }
+
+        if (formValido) {
+          btnSubmit.classList.add('loading');
+          btnSubmit.textContent = 'Criando conta...';
+          
+          setTimeout(() => {
+            console.log('Dados do registro:', {
+              nome: campos.nome.value,
+              email: campos.email.value,
+              senha: campos.senha.value,
+              newsletter: checkboxStates.newsletter
+            });
+            
+            alert('Conta criada com sucesso! Bem-vindo ao Rango Bravo!');
+            
+            window.location.href = 'index.html';
+          }, 2000);
+        }
+      });
+
+      document.querySelector('.btn-google').addEventListener('click', function() {
+        alert('Login com Google em desenvolvimento');
+      });
+
+      document.querySelector('.btn-facebook').addEventListener('click', function() {
+        alert('Login com Facebook em desenvolvimento');
+      });
+    });
+  </script>
+
+</body>
+</html>

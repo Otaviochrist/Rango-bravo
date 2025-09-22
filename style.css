@@ -410,7 +410,6 @@ header nav ul li a:hover {
   text-align: center;
 }
 
-
 /* FILTROS */
 .filtros {
   display: flex;
@@ -487,6 +486,439 @@ header nav ul li a:hover {
   transform: rotate(180deg);
 }
 
+/* ESTILOS ESPECÍFICOS PARA A PÁGINA DE REGISTRO */
+.registro-container {
+    min-height: calc(100vh - 140px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #FDFCF6 0%, #F5F3ED 100%);
+}
+
+.registro-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1200px;
+    width: 100%;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    animation: slideUp 0.6s ease-out;
+}
+
+.registro-info {
+    background: linear-gradient(135deg, #FF4D4D 0%, #FF6B6B 100%);
+    color: white;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.registro-info::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="white" opacity="0.1"/><circle cx="80" cy="40" r="1.5" fill="white" opacity="0.1"/><circle cx="40" cy="80" r="1" fill="white" opacity="0.1"/></svg>') repeat;
+    animation: float 20s infinite linear;
+}
+
+.registro-info h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.registro-info p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+    position: relative;
+}
+
+.beneficios {
+    list-style: none;
+    position: relative;
+}
+
+.beneficios li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+.beneficios li i {
+    margin-right: 0.75rem;
+    font-size: 1.2rem;
+    color: #FFE5E5;
+}
+
+.registro-form {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.form-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.form-header p {
+    color: #666;
+    font-size: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #E5E5E5;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #FAFAFA;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #FF4D4D;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(255, 77, 77, 0.1);
+    transform: translateY(-2px);
+}
+
+.password-wrapper {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #666;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.toggle-password:hover {
+    color: #FF4D4D;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+}
+
+.checkbox-custom {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #E5E5E5;
+    border-radius: 4px;
+    background: white;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.checkbox-custom.checked {
+    background: #FF4D4D;
+    border-color: #FF4D4D;
+}
+
+.checkbox-custom.checked::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.checkbox-label {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.4;
+    cursor: pointer;
+}
+
+.checkbox-label a {
+    color: #FF4D4D;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.checkbox-label a:hover {
+    text-decoration: underline;
+}
+
+.btn-registro {
+    background: linear-gradient(135deg, #FF4D4D 0%, #FF6B6B 100%);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-registro::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-registro:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 77, 77, 0.3);
+}
+
+.btn-registro:hover::before {
+    left: 100%;
+}
+
+.btn-registro:disabled {
+    background: #CCC;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.divider {
+    text-align: center;
+    margin: 2rem 0;
+    position: relative;
+}
+
+.divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #E5E5E5;
+}
+
+.divider span {
+    background: white;
+    padding: 0 1rem;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.social-login {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.btn-social {
+    padding: 0.8rem;
+    border: 2px solid #E5E5E5;
+    border-radius: 10px;
+    background: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-social:hover {
+    border-color: #FF4D4D;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-google {
+    color: #DB4437;
+}
+
+.btn-facebook {
+    color: #4267B2;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.login-link a {
+    color: #FF4D4D;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* VALIDAÇÃO E FEEDBACK */
+.form-control.error {
+    border-color: #e74c3c;
+    background: #fdf2f2;
+}
+
+.form-control.success {
+    border-color: #27ae60;
+    background: #f2f9f2;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    display: none;
+}
+
+.success-message {
+    color: #27ae60;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    display: none;
+}
+
+/* LOADING STATE */
+.btn-registro.loading {
+    pointer-events: none;
+}
+
+.btn-registro.loading::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: 2px solid transparent;
+    border-top: 2px solid white;
+    border-radius: 50%;
+    animation: spin 1s infinite;
+    margin-left: 0.5rem;
+}
+
+/* ANIMAÇÕES */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    from {
+        transform: translateX(-100px);
+    }
+    to {
+        transform: translateX(100px);
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* RESPONSIVIDADE PARA REGISTRO */
+@media (max-width: 968px) {
+    .registro-wrapper {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+    }
+    
+    .registro-info {
+        order: 2;
+        padding: 2rem;
+        text-align: center;
+    }
+    
+    .registro-form {
+        order: 1;
+        padding: 2rem;
+    }
+    
+    .form-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .registro-info h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .registro-container {
+        padding: 1rem;
+    }
+    
+    .registro-form, .registro-info {
+        padding: 1.5rem;
+    }
+    
+    .social-login {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* FOOTER */
 footer {
     display: flex;
@@ -522,232 +954,138 @@ footer {
 .footer-socials img:hover {
     transform: scale(1.15);
 }
- .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
-      animation: fadeIn 0.3s ease;
-    }
 
-    .modal.show {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+/* MODAL STYLES */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    animation: fadeIn 0.3s ease;
+}
 
-    .modal-content {
-      background-color: white;
-      border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      max-width: 800px;
-      width: 90%;
-      max-height: 90vh;
-      overflow-y: auto;
-      position: relative;
-      animation: slideIn 0.3s ease;
-    }
+.modal.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-    .modal-header {
-      position: relative;
-      height: 300px;
-      overflow: hidden;
-      border-radius: 15px 15px 0 0;
-    }
+.modal-content {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    max-width: 800px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    animation: slideIn 0.3s ease;
+}
 
-    .modal-header img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+.modal-header {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 15px 15px 0 0;
+}
 
-    .close-modal {
-      position: absolute;
-      top: 15px;
-      right: 20px;
-      background: rgba(255, 255, 255, 0.9);
-      border: none;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      cursor: pointer;
-      font-size: 1.2rem;
-      color: #333;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    }
+.modal-header img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-    .close-modal:hover {
-      background: #FF4D4D;
-      color: white;
-      transform: rotate(90deg);
-    }
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
 
-    .modal-body {
-      padding: 2rem;
-    }
+.close-modal:hover {
+    background: #FF4D4D;
+    color: white;
+    transform: rotate(90deg);
+}
 
-    .modal-title {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      color: #333;
-    }
+.modal-body {
+    padding: 2rem;
+}
 
-    .modal-tags {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 1.5rem;
-      flex-wrap: wrap;
-    }
+.modal-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #333;
+}
 
-    .modal-description {
-      font-size: 1.1rem;
-      line-height: 1.7;
-      color: #555;
-      margin-bottom: 2rem;
-    }
+.modal-tags {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
 
-    .receita-info {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-    }
+.modal-description {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 2rem;
+}
 
-    .info-item {
-      text-align: center;
-      padding: 1rem;
-      background: #F8F8F8;
-      border-radius: 10px;
-    }
+.receita-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
 
-    .info-item i {
-      font-size: 1.5rem;
-      color: #FF4D4D;
-      margin-bottom: 0.5rem;
-    }
+.info-item {
+    text-align: center;
+    padding: 1rem;
+    background: #F8F8F8;
+    border-radius: 10px;
+}
 
-    .info-item h4 {
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      color: #666;
-      margin-bottom: 0.3rem;
-      font-weight: 600;
-    }
+.info-item i {
+    font-size: 1.5rem;
+    color: #FF4D4D;
+    margin-bottom: 0.5rem;
+}
 
-    .info-item span {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: #333;
-    }
+.info-item h4 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+}
 
-    .ingredientes, .modo-preparo {
-      margin-bottom: 2rem;
-    }
-
-    .ingredientes h3, .modo-preparo h3 {
-      font-size: 1.4rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-      color: #333;
-      border-bottom: 2px solid #FF4D4D;
-      padding-bottom: 0.5rem;
-    }
-
-    .ingredientes ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .ingredientes li {
-      padding: 0.5rem 0;
-      border-bottom: 1px solid #F0F0F0;
-      position: relative;
-      padding-left: 1.5rem;
-    }
-
-    .ingredientes li:before {
-      content: "✓";
-      position: absolute;
-      left: 0;
-      color: #FF4D4D;
-      font-weight: bold;
-    }
-
-    .modo-preparo ol {
-      counter-reset: step-counter;
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .modo-preparo li {
-      position: relative;
-      padding: 1rem 0 1rem 3rem;
-      border-bottom: 1px solid #F0F0F0;
-      counter-increment: step-counter;
-    }
-
-    .modo-preparo li:before {
-      content: counter(step-counter);
-      position: absolute;
-      left: 0;
-      top: 1rem;
-      background: #FF4D4D;
-      color: white;
-      border-radius: 50%;
-      width: 30px;
-      height: 30px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      font-size: 0.9rem;
-    }
-
-    .card {
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes slideIn {
-      from {
-        opacity: 0;
-        transform: translateY(-50px) scale(0.95);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
-    }
-
-    @media (max-width: 768px) {
-      .modal-content {
-        width: 95%;
-        margin: 1rem;
-      }
-      
-      .modal-body {
-        padding: 1.5rem;
-      }
-      
-      .modal-title {
-        font-size: 1.5rem;
-      }
-      
-      .receita-info {
-        grid-template-columns: 1fr;
-      }
-    }
+.info-item span {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+}
+/* Estilo para o texto de ajuda do formulário */
+.form-text {
+    display: block; /* Garante que o texto ocupe sua própria linha */
+    margin-top: 5px;
+    font-size: 0.85rem;
+    color: #6c757d; /* Um tom de cinza */
+}
