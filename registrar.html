@@ -46,7 +46,7 @@
           <p>Preencha os dados para começar sua jornada culinária</p>
         </div>
 
-        <form id="registroForm" novalidate>
+        <form id="registroForm" novalidate onsubmit="cadastrar(event)">
           <div class="form-group">
             <label for="nome">Nome Completo</label>
             <input type="text" id="nome" name="nome" class="form-control" placeholder="Digite seu nome completo">
